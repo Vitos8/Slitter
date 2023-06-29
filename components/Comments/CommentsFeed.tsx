@@ -36,7 +36,7 @@ const CommentsFeed = ({postId}:any) => {
 
      return (
           <div className="">
-               {post?.comments?.map((item) => (
+               {post?.comments?.map((item:any) => (
                     <PostItem data={item} userId={postId} key={item.id} />
                ))}
           </div>
