@@ -4,7 +4,7 @@ import PostItem from "../Posts/PostItem";
 import { Bars } from "react-loader-spinner";
 import usePost from "@/hooks/usePost";
 
-const CommentsFeed = ({postId}) => {
+const CommentsFeed = ({postId}:any) => {
      const { data: post = {}, isLoading } = usePost(postId);
 
      if (post.length === 0 && postId && !isLoading) {
