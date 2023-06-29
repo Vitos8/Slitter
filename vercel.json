@@ -14,16 +14,6 @@
                "use": "@vercel/static"
           }
      ],
-     "routes": [
-          {
-               "src": "/api/(.*)",
-               "dest": "/api/$1"
-          },
-          {
-               "src": "/(.*)",
-               "dest": "/$1"
-          }
-     ],
      "env": {
           "PRISMA_ENDPOINT": "https://your-prisma-api-endpoint.com",
           "SECRET_KEY": "NEXTAUTH_SECRET"
