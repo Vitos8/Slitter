@@ -19,10 +19,10 @@ const Follows = () => {
 
      useEffect(() => {
           if(router.pathname === "/connections" ) {
-               followsRef?.current.style.display = "none";
+               followsRef.current ? followsRef?.current.style.display = "none" : null;
                return
           }
-          followsRef?.current.style.display = "block";
+          followsRef.current ?  followsRef?.current.style.display = "block" : null;
      },[router.pathname])
 
      const redirectToUser = (id: number) => {
