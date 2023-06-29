@@ -18,11 +18,11 @@ const Follows = () => {
      const loginModal = useLoginModal();
 
      useEffect(() => {
-          if(router.pathname === "/connections") {
-               followsRef.current.style.display = "none";
+          if(router.pathname === "/connections" ) {
+               followsRef?.current.style.display = "none";
                return
           }
-          followsRef.current.style.display = "block";
+          followsRef?.current.style.display = "block";
      },[router.pathname])
 
      const redirectToUser = (id: number) => {
