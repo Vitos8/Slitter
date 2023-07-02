@@ -11,7 +11,7 @@ import Avatar from "../Avatar/Avatar";
 import axios from "axios";
 
 const Follows = () => {
-     const followsRef = useRef(null);
+     const followsRef = useRef<any>(null);
      const router = useRouter();
      const { data: users = [] } = useUsers();
      const { data: currentUser } = useCurrentUser();
@@ -19,10 +19,10 @@ const Follows = () => {
 
      useEffect(() => {
           if(router.pathname === "/connections" ) {
-               followsRef.current ? followsRef?.current.style.display = "none" : null;
+               followsRef.current ? followsRef.current.style.display = "none" : null;
                return
           }
-          followsRef.current ?  followsRef?.current.style.display = "block" : null;
+          followsRef.current ?  followsRef.current.style.display = "block" : null;
      },[router.pathname])
 
      const redirectToUser = (id: number) => {

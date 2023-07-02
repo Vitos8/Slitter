@@ -4,11 +4,11 @@ import Avatar from "../Avatar/Avatar";
 import { toast } from "react-toastify";
 import axios from "axios";
 import usePosts from "@/hooks/usePosts";
-import usePost from "../../hooks/usePost.ts";
+import usePost from "@/hooks/usePost";
 
 interface PostFormProps {
      placeholder: string;
-     postId?: number;
+     postId?: string;
      isComment?: boolean;
 }
 

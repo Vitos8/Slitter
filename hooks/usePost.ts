@@ -1,7 +1,7 @@
 import { fetcher } from "@/libs/fetcher";
 import useSWR from "swr";
 
-const usePost = (postId: string) => {
+const usePost = (postId: string | undefined) => {
      const { data, isLoading, mutate } = useSWR(
           postId ? `/api/posts/${postId}` : null,
           fetcher

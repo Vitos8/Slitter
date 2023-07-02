@@ -1,5 +1,5 @@
 import { fetcher } from "@/libs/fetcher";
-import { useSWR } from "swr";
+import useSWR from "swr";
 
 const useNotifications = (userId?: string) => {
      const url = userId ? `/api/notifications/${userId}` : null;
@@ -12,3 +12,5 @@ const useNotifications = (userId?: string) => {
           mutate,
      };
 };
+
+export default useNotifications;

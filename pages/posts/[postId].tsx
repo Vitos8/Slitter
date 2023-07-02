@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import Header from "../../components/Layout/Header";
+import Header from "@/components/Layout/Header";
 import { useRouter } from "next/router";
-import usePost from "../../hooks/usePost.ts";
-import PostItem from "../../components/Posts/PostItem";
+import usePost from "@/hooks/usePost";
+import PostItem from "@/components/Posts/PostItem";
 import { Bars } from "react-loader-spinner";
 import PostForm from "@/components/Posts/PostForm";
 import CommentsFeed from "@/components/Comments/CommentsFeed";
@@ -12,9 +12,9 @@ const PostView = () => {
      const postId = useMemo(() => {
           return router.query.postId;
      }, [router.query.postId]);
-     const { data: post } = usePost(postId);
+     const { data: post } = usePost(postId as string);
 	
-     if (!post) {
+     if (!post || postId) {
           return (
                <div className="mt-[30px] mb-[40px] flex justify-center items-center">
                     <Bars
@@ -37,7 +37,7 @@ const PostView = () => {
                     <PostItem data={post} userId={postId} />
                     <PostForm
                          isComment
-                         postId={postId}
+                         postId={postId as string}
                          placeholder="Write a comment to this tweet !"
                     />
                     <CommentsFeed postId={postId} />

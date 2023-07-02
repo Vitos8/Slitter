@@ -16,8 +16,6 @@ const UserDescription: FC<UserDescProps> = ({ userId }) => {
      const { data: currentUser } = useCurrentUser();
      const editModal = useEditModal();
 
-     const onFollow = (id: number) => {};
-
      const createdAt = useMemo(() => {
           if (!user?.createdAt) {
                return null;
@@ -54,7 +52,6 @@ const UserDescription: FC<UserDescProps> = ({ userId }) => {
                     ) : (
                          <FollowButton
                               bgColorBlue
-                              onFollow={onFollow}
                               userId={user.id}
                          />
                     )}
