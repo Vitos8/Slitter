@@ -9,7 +9,6 @@ interface PostFeedProps {
 
 const PostFeed: FC<PostFeedProps> = ({ postId }) => {
      const { data: posts = [], isLoading } = usePosts(postId);
-     console.log(posts,'posts');
      
      if (posts.length === 0 && postId && !isLoading ) {
           return (

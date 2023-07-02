@@ -8,7 +8,7 @@ import usePost from "@/hooks/usePost";
 
 interface PostFormProps {
      placeholder: string;
-     postId?: string;
+     postId?: stringw;
      isComment?: boolean;
 }
 
