@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { useRouter } from "next/router";
 import EditModal from "@/components/Modals/EditModal/EditModal";
-import ErrorBoundary from "@/components/ErrorBoundary/ErrorBoundary";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -53,9 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
                <EditModal />
                {isLoading && <SplashScreen />}
                <Layout>
-                    <ErrorBoundary>
-                         <Component {...pageProps} />
-                    </ErrorBoundary>
+                    <Component {...pageProps} />
                </Layout>
           </SessionProvider>
      );
