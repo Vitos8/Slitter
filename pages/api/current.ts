@@ -1,3 +1,4 @@
+import { getSession } from 'next-auth/react';
 import serverAuth from "@/libs/serverAuth";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -7,6 +8,12 @@ export default async function handler(
 ) {
      if (req.method !== "GET") {
           return res.status(405).end();
+     }
+
+     const session = await getSession({req});
+
+     if(!session) {
+          return res.status(401).json({message: "Unauthorized."});
      }
 
      try {
