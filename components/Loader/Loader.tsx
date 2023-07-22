@@ -1,6 +1,6 @@
-import React from "react";
+import {FC} from "react";
 import { Bars } from "react-loader-spinner";
-import { getLoaderSize } from "../../utils/utils.ts";
+import { getLoaderSize } from "../../utils/utils";
 
 interface LoaderProps {
      size: "lg" | "md" | "s";
