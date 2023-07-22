@@ -10,7 +10,7 @@ import useUsers from "@/hooks/useUsers";
 import FollowButton from "../Buttons/FollowButton";
 import { CgProfile } from "react-icons/cg";
 import Avatar from "../Avatar/Avatar";
-import { UserType } from "../../types/types.ts";
+import { UserType } from "../../types/types";
 
 const Follows = () => {
      const followsRef = useRef<any>(null);
