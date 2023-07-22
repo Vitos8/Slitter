@@ -1,10 +1,10 @@
 import React from "react";
 import { FC } from "react";
 import PostItem from "../Posts/PostItem";
-import { Bars } from "react-loader-spinner";
 import usePost from "@/hooks/usePost";
+import Loader from "@/components/Loader/Loader";
 
-const CommentsFeed = ({postId}:any) => {
+const CommentsFeed = ({ postId }: any) => {
      const { data: post = {}, isLoading } = usePost(postId);
 
      if (post.length === 0 && postId && !isLoading) {
@@ -21,22 +21,14 @@ const CommentsFeed = ({postId}:any) => {
      if (isLoading) {
           return (
                <div className="mt-[50px] mb-[40px] flex justify-center items-center">
-                    <Bars
-                         height="80"
-                         width="80"
-                         color="rgb(29, 155, 240)"
-                         ariaLabel="bars-loading"
-                         wrapperStyle={{}}
-                         wrapperClass=""
-                         visible={true}
-                    />
+                    <Loader size="lg" />
                </div>
           );
      }
 
      return (
           <div className="">
-               {post?.comments?.map((item:any) => (
+               {post?.comments?.map((item: any) => (
                     <PostItem data={item} userId={postId} key={item.id} />
                ))}
           </div>

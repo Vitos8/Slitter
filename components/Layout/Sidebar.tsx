@@ -1,5 +1,5 @@
 import React from "react";
-import TweetButton from "../Button/TweetButton";
+import TweetButton from "../Buttons/TweetButton";
 import SidebarItem from "./SidebarItem";
 import { BsTwitter,BsPeople} from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";

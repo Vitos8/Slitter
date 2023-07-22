@@ -6,7 +6,7 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import useUser from "@/hooks/useUser";
 import { useRouter } from "next/router";
 import React from "react";
-import { Bars } from "react-loader-spinner";
+import Loader from "@/components/Loader/Loader";
 
 const UserView = () => {
      const router = useRouter();
@@ -16,14 +16,7 @@ const UserView = () => {
      if (isLoading) {
           return (
                <div className="mt-[200px] mb-[40px] flex justify-center items-center">
-                    <Bars
-                         height="80"
-                         width="80"
-                         color="rgb(29, 155, 240)"
-                         ariaLabel="bars-loading"
-                         wrapperStyle={{}}
-                         wrapperClass=""
-                         visible={true}
+                    <Loader size='lg'
                     />
                </div>
           );

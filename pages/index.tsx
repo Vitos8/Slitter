@@ -3,7 +3,6 @@ import Header from "@/components/Layout/Header";
 import Welcome from "@/components/Welcome/Welcome";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { useEffect, useState } from "react";
-import { Bars } from "react-loader-spinner";
 import axios from "axios";
 import PostForm from "@/components/Posts/PostForm";
 import PostFeed from "@/components/Posts/PostFeed";

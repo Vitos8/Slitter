@@ -1,11 +1,12 @@
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useUser from "@/hooks/useUser";
 import { FC, useMemo } from "react";
-import FollowButton from "../Follows/FollowButton";
+import FollowButton from "../Buttons/FollowButton";
 import { BiCalendar } from "react-icons/bi";
 import { format } from "date-fns";
 import useEditModal from "@/hooks/useEditModal";
 import { Bars } from "react-loader-spinner";
+import Loader from "@/components/Loader/Loader";
 
 interface UserDescProps {
      userId: string;
@@ -27,15 +28,7 @@ const UserDescription: FC<UserDescProps> = ({ userId }) => {
      if (isLoading) {
           return (
                <div className="mt-[100px] mb-[40px] flex justify-center items-center">
-                    <Bars
-                         height="80"
-                         width="80"
-                         color="rgb(29, 155, 240)"
-                         ariaLabel="bars-loading"
-                         wrapperStyle={{}}
-                         wrapperClass=""
-                         visible={true}
-                    />
+                    <Loader size="lg" />
                </div>
           );
      }
@@ -50,10 +43,7 @@ const UserDescription: FC<UserDescProps> = ({ userId }) => {
                               Edit profile
                          </div>
                     ) : (
-                         <FollowButton
-                              bgColorBlue
-                              userId={user.id}
-                         />
+                         <FollowButton bgColorBlue userId={user.id} />
                     )}
                </div>
                <div className="mt-10 ml-10">

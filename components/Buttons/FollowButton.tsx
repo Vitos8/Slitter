@@ -3,7 +3,7 @@ import useFollow from "@/hooks/useFollow";
 import useLoginModal from "@/hooks/useLoginModal";
 import axios from "axios";
 import { FC, useEffect, useState, useMemo } from "react";
-import { Bars, ColorRing } from "react-loader-spinner";
+import {  ColorRing } from "react-loader-spinner";
 
 interface IFollowButtonProps {
      bgColorBlue?: boolean;
