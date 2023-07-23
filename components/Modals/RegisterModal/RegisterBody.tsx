@@ -107,7 +107,7 @@ const RegisterBody = () => {
                               String(errors?.password?.message)}
                     </div>
                </div>
-               <AuthSwitchModals to="Login" text="Log in to TwitterClone" />
+               <AuthSwitchModals to="Login" text="Log in to Slitter" />
           </div>
      );
 };

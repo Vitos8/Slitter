@@ -46,7 +46,7 @@ const LoginModal = () => {
                isOpen={loginModal.isOpen}
                onSubmit={onLoginSubmit}
                actionLabel="Log in"
-               title="Log in to TwitterClone"
+               title="Log in to Slitter"
                body={<LoginBody />}
           />
      );

@@ -41,7 +41,7 @@ const RegisterModal = () => {
                isOpen={registerModal.isOpen}
                onSubmit={onLoginSubmit}
                actionLabel="Register"
-               title="Register to TwitterClone"
+               title="Register to Slitter"
                body={<RegisterBody />}
           />
      );

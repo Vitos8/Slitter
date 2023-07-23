@@ -36,7 +36,7 @@ const LoginBody = () => {
                          {errors?.password && "Password is required !"}
                     </div>
                </div>
-               <AuthSwitchModals to="Register" text="Register to TwitterClone" />
+               <AuthSwitchModals to="Register" text="Register to Slitter" />
           </div>
      );
 };
