@@ -36,27 +36,27 @@ export default function App({ Component, pageProps }: AppProps) {
 
      return (
           <ErrorBoundary>
-               <SessionProvider session={pageProps.session}>
-                    <LoginModal />
-                    <ToastContainer
-                         position="top-center"
-                         autoClose={3000}
-                         hideProgressBar={false}
-                         newestOnTop
-                         closeOnClick
-                         rtl={false}
-                         pauseOnFocusLoss={false}
-                         draggable
-                         pauseOnHover
-                         theme="colored"
-                    />
-                    <RegisterModal />
-                    <EditModal />
-                    {isLoading && <SplashScreen />}
-                    <Layout>
-                         <Component {...pageProps} />
-                    </Layout>
-               </SessionProvider>
+               {/*<SessionProvider session={pageProps.session}>*/}
+               <LoginModal />
+               <ToastContainer
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss={false}
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+               />
+               <RegisterModal />
+               <EditModal />
+               {isLoading && <SplashScreen />}
+               <Layout>
+                    <Component {...pageProps} />
+               </Layout>
+               {/*</SessionProvider>*/}
           </ErrorBoundary>
      );
 }
