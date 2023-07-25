@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import EditModal from "@/components/Modals/EditModal/EditModal";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary";
 
 export default function App({ Component, pageProps }: AppProps) {
      const [isLoading, setIsLoading] = useState(false);
@@ -34,26 +35,28 @@ export default function App({ Component, pageProps }: AppProps) {
      }, []);
 
      return (
-          <SessionProvider session={pageProps.session}>
-               <LoginModal />
-               <ToastContainer
-                    position="top-center"
-                    autoClose={3000}
-                    hideProgressBar={false}
-                    newestOnTop
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss={false}
-                    draggable
-                    pauseOnHover
-                    theme="colored"
-               />
-               <RegisterModal />
-               <EditModal />
-               {isLoading && <SplashScreen />}
-               <Layout>
-                    <Component {...pageProps} />
-               </Layout>
-          </SessionProvider>
+          <ErrorBoundary>
+               <SessionProvider session={pageProps.session}>
+                    <LoginModal />
+                    <ToastContainer
+                         position="top-center"
+                         autoClose={3000}
+                         hideProgressBar={false}
+                         newestOnTop
+                         closeOnClick
+                         rtl={false}
+                         pauseOnFocusLoss={false}
+                         draggable
+                         pauseOnHover
+                         theme="colored"
+                    />
+                    <RegisterModal />
+                    <EditModal />
+                    {isLoading && <SplashScreen />}
+                    <Layout>
+                         <Component {...pageProps} />
+                    </Layout>
+               </SessionProvider>
+          </ErrorBoundary>
      );
 }
