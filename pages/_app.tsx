@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
      return (
           <ErrorBoundary>
-               <SessionProvider session={pageProps.session}>
+               {/*<SessionProvider session={pageProps.session}>*/}
                <LoginModal />
                <ToastContainer
                     position="top-center"
@@ -56,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
                <Layout>
                     <Component {...pageProps} />
                </Layout>
-               </SessionProvider>
+               {/*</SessionProvider>*/}
           </ErrorBoundary>
      );
 }
