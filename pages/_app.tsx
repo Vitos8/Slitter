@@ -19,19 +19,19 @@ export default function App({ Component, pageProps }: AppProps) {
      const router = useRouter();
 
      useEffect(() => {
-          const splashShown = sessionStorage.getItem("splashShown");
+          //const splashShown = sessionStorage.getItem("splashShown");
 
-          if (!currentUser) {
-               router.push("/");
-          }
+          //if (!currentUser) {
+          //     router.push("/");
+          //}
 
-          if (!splashShown) {
-               setIsLoading(true);
-               sessionStorage.setItem("splashShown", "true");
-          }
-          setTimeout(() => {
-               setIsLoading(false);
-          }, 4000);
+          //if (!splashShown) {
+          //     setIsLoading(true);
+          //     sessionStorage.setItem("splashShown", "true");
+          //}
+          //setTimeout(() => {
+          //     setIsLoading(false);
+          //}, 4000);
      }, []);
 
      return (
@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
                />
                <RegisterModal />
                <EditModal />
-               {isLoading && <SplashScreen />}
+               {/*{isLoading && <SplashScreen />}*/}
                <Layout>
                     <Component {...pageProps} />
                </Layout>
